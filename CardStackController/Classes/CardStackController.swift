@@ -71,6 +71,10 @@ public class CardStackController: UIViewController {
     ///
     /// *Default value*: 5
     public var frequency: CGFloat = 5
+    
+    /// Pan Gesture
+    /// Do not access before viewDidLoad has been called!
+    public var panGestureRecognizer: UIPanGestureRecognizer!
 
     public weak var delegate: CardStackControllerDelegate?
 
@@ -87,7 +91,6 @@ public class CardStackController: UIViewController {
     fileprivate var attachmentBehaviors: [UIAttachmentBehavior] = []
     fileprivate var dynamicItemBehavior: UIDynamicItemBehavior!
     fileprivate var panAttachmentBehavior: UIAttachmentBehavior!
-    fileprivate var panGestureRecognizer: UIPanGestureRecognizer!
     fileprivate var isPresentingCard = false
     fileprivate var initialDraggingPoint = CGPoint.zero
     fileprivate var stackCompletionBlock: CompletionBlock?

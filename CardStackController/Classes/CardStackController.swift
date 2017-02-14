@@ -72,6 +72,8 @@ public class CardStackController: UIViewController {
     /// *Default value*: 5
     public var frequency: CGFloat = 5
     
+    public var statusBarStyle: UIStatusBarStyle = .default
+    
     /// Pan Gesture
     /// Do not access before viewDidLoad has been called!
     public var panGestureRecognizer: UIPanGestureRecognizer!
@@ -445,6 +447,10 @@ public class CardStackController: UIViewController {
         dismiss(animated: false) { finished in
             self.delegate?.didFinishDismissingCardController?()
         }
+    }
+    
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        return self.statusBarStyle
     }
 }
 
